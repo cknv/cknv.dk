@@ -1,0 +1,35 @@
+page_defaults:
+    url_pattern: "/{category}/{date.year}/{date.month}/{slug}/"
+    author:
+        name: Esben Sonne
+        email: esbensonne+blog@gmail.com
+        image: /images/esben.jpg
+        github: https://github.com/cknv
+        linkedin: http://dk.linkedin.com/in/esbensonne/
+        googleplus: https://plus.google.com/+EsbenSonne/
+site:
+    title: cknv
+    domain: test.cknv.dk
+    version: 0.3.5
+    grouping:
+        - field: tags
+          order: desc
+          key: date
+        - field: project
+          order: desc
+          key: date
+        - field: category
+          order: desc
+          key: date
+        - field: category
+          order: desc
+          name: feed
+          key: date
+plugins:
+    - name: beetle_server
+      port: 5000
+    - name: beetle_markdown
+    - name: beetle_s3uploader
+      gzip: true
+      headers: 
+          - cache-control:max-age=3600

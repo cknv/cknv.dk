@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+{{ page.content }}
+{% for group, pages in page.subpages.items() %}
+    <div id='{{ group.slug }}'>
+        <h3>{{ group.name }}</h2>
+        <ul>
+    {% for subpage in pages %}
+        <li>{{ subpage.date }} <a href='{{ subpage.url }}'>{{ subpage.title }}</a></li>
+    {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
+    <hr />
+{% endblock %}

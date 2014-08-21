@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+    {{ page.content }}
+    <hr />
+    {% if page.project %}
+    <div id="project">
+        <p>Project: <a href="/blog/projects#{{ page.project.slug }}">{{ page.project.name }}</a></p>        
+    </div>
+    {% endif %}
+    {% if page.tags %}
+    <div id="tags">
+        <ul id="tags">
+            <li class="tag">Tags:</li>
+    {% for tag in page.tags %}
+            <li class="tag"><a href="/blog/tags/#{{ tag.slug }}">{{ tag.name }}</a></li>
+    {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    <p>Posted {{ page.date.strftime('%b %d %Y')}} by <a href="mailto:{{ page.author.email }}">{{ page.author.name }}</a></p>
+    <hr />
+{% endblock %}
