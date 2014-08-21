@@ -21,10 +21,6 @@ site:
         - field: category
           order: desc
           key: date
-        - field: category
-          order: desc
-          name: feed
-          key: date
 plugins:
     - name: beetle_server
       port: 5000
