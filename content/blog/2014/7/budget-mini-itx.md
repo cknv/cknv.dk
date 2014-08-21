@@ -6,9 +6,9 @@ type: blog
 category: blog
 summary: Continuing planning the the PC for a friend.
 ---
-So I continued my talks with A about her PC, and it seems that by far the simplest solution for me to build and for her to upgrade will be a regular Intel + Nvidia. For most people this may not be best performance for the money, but she can save some by getting my "old" i5 4670 as I was planning on upgrading to a 4690K when I anyway am going to open my case and mess around in there.
+So I continued my talks with *A* about her PC, and it seems that by far the simplest solution for me to build and for her to upgrade will be a regular Intel + Nvidia. For most people this may not be best performance for the money, but she can save some by getting my "old" i5 4670 as I was planning on upgrading to a 4690K when I anyway am going to open my case and mess around in there.
 
-When it comes to the GPU I have yet to find a rear exhaust 750, but I have found some where the cooler fins go along the card, rather than across it. This should cause some air to be vented backwards and directly out of the case - sometimes, good enough is good enough.
+When it comes to the GPU I have yet to find a rear exhaust 750, but I have found some where the cooler fins go along the card, rather than across it. This should cause *some* air to be vented backwards and directly out of the case - sometimes, good enough is good enough.
 
 Speaking of Motherboards, I think I will stick to the usual suspects, Asus, MSI, Gigabyte etc, and try to find one with the optimal compromise between specs and price.
 

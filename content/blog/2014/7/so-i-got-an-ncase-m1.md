@@ -15,7 +15,7 @@ My mistakes were:
 
 So when I saw the M1 was getting a [second production run](http://www.ncases.com/v2/m1.php) (with some slight modifications), I jumped at it, and I am now awaiting getting the M1 V2. I plan to transplant the innards of my current build into the new case once it arrives, but not right away. I want to change a few things, now that I am not in a rush/too eager to build.
 
-* Get a new PSU, the Silverstone SFX 600W has gotten some interesting press, and seems quite interesting. Although I don't need more than 450W, it can be nice with the headroom for keeping the fan operating at a lower level.
+* Get a new PSU, the Silverstone SFX 600W has gotten some interesting press, and *seems* quite interesting. Although I don't need more than 450W, it can be nice with the headroom for keeping the fan operating at a lower level.
 * With a new PSU without a ghetto mounted fan on the side, I will have space for mounting a radiator and fans on the side mount. The plan is to watercool the GPU, but I may include the CPU in the loop, as I think that will simplify the fan/pump regulation a great deal.
 
 But what is going to happen with the old case then? Surely I cannot give it away, there is too much sentimental value in it for me, as it housed my first SFF PC (yes, my first SFF build was in the M1, I might be crazy). Luckily, I have a plan to turn it into a home server/NAS at some point, but that seems like a future project, not the one for today.

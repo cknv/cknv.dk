@@ -22,6 +22,7 @@ As far as I understood the main requirements are:
 * Better graphics performance.
 * Upgradeability.
 * Small footprint (her desk is not big).
+
 And everybody likes:
 
 * A nice looking case.
@@ -34,7 +35,7 @@ So given that I am already partial to SFF PCs, I thought that she can do fine wi
 
 It would seem that the IN WIN 901 is in the lead currently, the runner up was the BitFenix Prodigy, but the case width kind of ruled it out - that desk size making things hard. I liked the Thermaltake Core V1, recently announced at Computex in Taipei, but it's not out yet, and who knows how long it takes for it to reach Europe?
 
-From what I have already read, the IN WIN 901 appears to be a fine case, for a certain kind of build. It has very little room for fans, so getting the heat of the case requires a bit of thought - and some powerful fans. The other notable problems are storage mounting, and price, but heat can be dealt with with proper thought, the need for storage is anyway kind of limited, so the case fits fine. I could forsee a problem with the price, but we already have a spreadsheet for all the parts. To make it easy to spot if a part costs too much and breaks the budget.
+From what I have already read, the IN WIN 901 appears to be a fine case, for a *certain* kind of build. It has very little room for fans, so getting the heat of the case requires a bit of thought - and some powerful fans. The other notable problems are storage mounting, and price, but heat can be dealt with with proper thought, the need for storage is anyway kind of limited, so the case fits fine. I could forsee a problem with the price, but we already have a spreadsheet for all the parts. To make it easy to spot if a part costs too much and breaks the budget.
 
 ###Futher research
 
