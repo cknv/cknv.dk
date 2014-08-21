@@ -1,9 +1,9 @@
 title: So I got a NCase M1...
-project: NCase M1 V2
+date: 2014-07-20
 tags: [builds, mini-itx, watercooling]
+project: NCase M1 V2
 category: blog
 type: blog
-date: 2014-07-20
 summary: How I messed up my first mini-itx build and how I plan to deal with it.
 ---
 I backed the first production run of the [NCase M1](https://www.indiegogo.com/projects/ncase-m1-mini-itx-pc-case), and I got one, with the number 204. And overall I am very happy with it. Although there is some problems with it - problems I could have avoided if I had known a little more about the problems with SFF builds, but you live, you fail, you learn. For what it is worth I consider myself a little wiser now.

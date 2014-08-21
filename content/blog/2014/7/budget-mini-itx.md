@@ -1,9 +1,9 @@
 title: Budget mini-itx, what to put in?
 date: 2014-07-29
-project: A PC for A
 tags: [builds, mini-itx]
-type: blog
+project: A PC for A
 category: blog
+type: blog
 summary: Continuing planning the the PC for a friend.
 ---
 So I continued my talks with *A* about her PC, and it seems that by far the simplest solution for me to build and for her to upgrade will be a regular Intel + Nvidia. For most people this may not be best performance for the money, but she can save some by getting my "old" i5 4670 as I was planning on upgrading to a 4690K when I anyway am going to open my case and mess around in there.

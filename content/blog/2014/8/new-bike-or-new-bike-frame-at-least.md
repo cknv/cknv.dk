@@ -2,8 +2,8 @@ title: New bike! Or bike frame at least
 date: 2014-08-01
 tags: [bike, diy]
 project: DIY Bike
-type: blog
 category: blog
+type: blog
 summary: I just got a used bike frame, now I got to turn it into a bike.
 ---
 I have for a long time been wanting to build myself a bike, and I have recently been spending quite a bit of time researching it. Some might say with passion, my girlfriend would say obsession - which I guess is a fair point.

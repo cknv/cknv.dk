@@ -2,8 +2,8 @@ title: Bike frame back from painting
 date: 2014-08-12
 tags: [bike, diy]
 project: DIY Bike
-type: blog
 category: blog
+type: blog
 summary: Old frame with new paint, and an old friend.
 ---
 I handed the raw bike frame off to the painter a couple of days after I got it, and went to pick it up a few days later and this was the result:

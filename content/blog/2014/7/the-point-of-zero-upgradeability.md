@@ -1,9 +1,9 @@
 title: The Point of Zero Upgradeability
 date: 2014-07-16
-project: A PC for A
 tags: [builds, mini-itx]
-type: blog
+project: A PC for A
 category: blog
+type: blog
 summary: Getting started with planning a SFF build for a friend.
 ---
 

@@ -1,9 +1,9 @@
 title: Hello Static World
 date: 2014-07-14
 tags: [meta]
+project: beetle
 category: blog
 type: blog
-project: beetle
 summary: A little about this blog, what's under the hood and what I intend to write about.
 ---
 Sorry, but this is mandatory. Welcome to what I intend to make a place for me to write - something that most people, including me, do far too little. So welcome to my blog - it is a static blog, which for the uninitiated means that there is no database and programming rendering the page as you request it, but rather the data and programming lies on my computer, than then renderers the html output once and puts it on a server for your reading.
