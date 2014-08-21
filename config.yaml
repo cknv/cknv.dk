@@ -27,5 +27,5 @@ plugins:
     - name: beetle_markdown
     - name: beetle_s3uploader
       gzip: true
-      headers: 
+      headers:
           - cache-control:max-age=3600
