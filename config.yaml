@@ -9,7 +9,7 @@ page_defaults:
         googleplus: https://plus.google.com/+EsbenSonne/
 site:
     title: cknv
-    domain: test.cknv.dk
+    domain: cknv.dk
     version: 0.3.5
     grouping:
         - field: tags
