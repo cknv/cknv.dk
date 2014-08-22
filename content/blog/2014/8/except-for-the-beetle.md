@@ -7,7 +7,7 @@ summary: I was wrong, rather than pagination, beetle now has exceptions.
 ---
 Beetle has exceptions!
 
-I know, it sounds ridiculus. Why did it not have exceptions before? The answer to that is basically: I was lazy. I had something that worked alright for me, and I was quite content. I had already scratched most of my proverbial itch.
+I know, it sounds ridiculus. Why did it not have exceptions before? The answer to that is very simeple: I was lazy. I had something that worked alright for me, and I was quite content. I had already scratched most of my proverbial itch.
 
 Then one of my [co-workers](http://tenzer.dk) decided to have a look at beetle, and because there is no documentation or help or anything. He encountered a lot (I think all?) or the errors that beetle could produce. Luckily he did not give up, but rather delved into the code and began suggesting changes (via githubs pull request, for the initated), a lot of them made it into beetle and and is now in the canonical version (the master branch).
 
