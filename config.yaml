@@ -22,7 +22,7 @@ site:
           order: desc
           key: date
 plugins:
-    - name: beetle_server
+    - name: beetle_preview
       port: 5000
     - name: beetle_markdown
     - name: beetle_s3uploader
