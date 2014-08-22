@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Noticia+Text:400,700,400italic,700italic|Montserrat:400,700);
+
+body {
+    margin: 0px;
+}
+
+p, a, li {
+    font-family: 'Noticia Text', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #202020;
+}
+
+h3 a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header, footer {
+    text-align: center;
+}
+
+header {
+    background-color: #202020;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+article {
+    margin: auto;
+    width: 780px;
+}
+
+nav a {
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 5px;
+}
+
+hr {
+    border: 0px;
+    border-top: 1px solid #EEE;
+    width: 90%;
+}
+
+img#author-image-small {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    display: block;
+    border-radius: 40px;
+    border: 2px solid white;
+    margin: auto;
+}
+
+.site-header {
+    color: white;
+}
+
+ul#tags {
+    padding: 0px;
+}
+
+li.tag {
+    display: inline-block;
+}
+
+article img {
+    display: block;
+    width: 650px;
+    margin: auto;
+}
