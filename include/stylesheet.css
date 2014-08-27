@@ -29,7 +29,7 @@ header {
 
 article {
     margin: auto;
-    width: 780px;
+    max-width: 780px;
 }
 
 nav a {
