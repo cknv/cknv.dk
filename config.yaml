@@ -10,7 +10,7 @@ page_defaults:
 site:
     title: cknv
     domain: cknv.dk
-    version: 0.3.5
+    version: 0.3.6
     grouping:
         - field: tags
           order: desc
