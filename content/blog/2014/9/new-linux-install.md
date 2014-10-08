@@ -1,6 +1,6 @@
 title: New Linux Install
 date: 2014-09-25
-tags: [linux, diy]
+tags: [arch linux, diy]
 category: blog
 type: blog
 summary: I finally pulled myself together and made my laptop as fancy as my workstation at work.
