@@ -1,5 +1,5 @@
 title: New Linux Install
-date: 2014-09-25
+date: 2014-10-08
 tags: [arch linux, diy]
 category: blog
 type: blog
