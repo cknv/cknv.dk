@@ -7,7 +7,7 @@ summary: I finally pulled myself together and made my laptop as fancy as my work
 ---
 For a long time, my laptop have had an old version of Linux Mint on it and to be honest, I was not great. It had some quirks and the underlying Ubuntu system made the whole thing a bit heavy to my taste.
 
-Recently, I installed [Arch Linux](archlinux.org) on my computer at work, and that worked wonders. Although it is a much simpler machine. There is no need to deal with WiFi, suspend and hibernate, media buttons and other essencially "weird" stuff. I say weird because I have always had difficulties with getting all the components working together to a nice and managable system.
+Recently, I installed [Arch Linux](https://archlinux.org) on my computer at work, and that worked wonders. Although it is a much simpler machine. There is no need to deal with WiFi, suspend and hibernate, media buttons and other essencially "weird" stuff. I say weird because I have always had difficulties with getting all the components working together to a nice and managable system.
 
 So I decided that I was fed up having old version of software on my machine, I wanted Python 3.4, I wanted to try Haskell and/or Rust, and I wanted to do that without tracking down a decent ppa, and without forcing it into the sytem. So it was time for a change.
 
