@@ -12,11 +12,11 @@ A lot of parcels arrived within a short timespan and sadly I was very caught up 
 
 First I got the long awaited parcel with the hubs and a seatpost (which is too big), and then my friend came over and made me help him make the wheels. Bascially I assembled the second wheel while he was tweaking the first, and afterwards tweaked the second. The process took a little while, but it was a fun evening and I learned something, and I think the end result is quite nice.
 
-![front hub](/images/PA311343.jpg)
+![front hub](/images/PA311345.jpg)
 
 The next day I got a parcel from [BLB](http://bricklanebikes.co.uk), containing the tires, stem, handlebars and brake levers. Which for the most part ended up looking like this:
 
-![one uninflated wheel](/images/PA311345.jpg)
+![one uninflated wheel](/images/PA311343.jpg)
 
 ![stem and handlebars](/images/PB111386.jpg)
 
