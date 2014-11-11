@@ -1,5 +1,5 @@
 title: Wheels and other parts
-date: 2014-11-10
+date: 2014-11-11
 tags: [bike, diy]
 project: DIY Bike
 category: blog
@@ -12,11 +12,13 @@ A lot of parcels arrived within a short timespan and sadly I was very caught up 
 
 First I got the long awaited parcel with the hubs and a seatpost (which is too big), and then my friend came over and made me help him make the wheels. Bascially I assembled the second wheel while he was tweaking the first, and afterwards tweaked the second. The process took a little while, but it was a fun evening and I learned something, and I think the end result is quite nice.
 
-![one uninflated wheel](/images/P8120673.jpg)
+![front hub](/images/PA311343.jpg)
 
 The next day I got a parcel from [BLB](http://bricklanebikes.co.uk), containing the tires, stem, handlebars and brake levers. Which for the most part ended up looking like this:
 
-![stem and handlebars](/images/P8120673.jpg)
+![one uninflated wheel](/images/PA311345.jpg)
+
+![stem and handlebars](/images/PB111386.jpg)
 
 Now as you may have noticed there is not yet any brakes on it, and there is a very good reason why. The otherwise very nice pair of Shimano 105s that I bought does not have the reach to actually reach the rim, I can fit it so the pads brake on the rubber walls of the tire, but I have a feeling that might not end very well.
 
@@ -26,4 +28,4 @@ In order to get a seatpost, I planned to go to one of the better (as far as I kn
 
 And lastly, here is how it looks so far:
 
-![total of bike](/images/P8120673.jpg)
+![total of bike](/images/PA311349.jpg)
