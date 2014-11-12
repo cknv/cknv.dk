@@ -1,5 +1,5 @@
 title: About
-url: about/index.html
+url: /about/index.html
 type: page
 ---
 Hello, my name is Esben. And I write software for a living, but I am also a dilettante and enthusiast of many things. Especially learning to do new things.
