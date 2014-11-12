@@ -71,6 +71,6 @@ li.tag {
 
 article img {
     display: block;
-    width: 650px;
     margin: auto;
+    max-width: 85%;
 }
