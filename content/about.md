@@ -8,6 +8,6 @@ My email address is [esbensonne+blog@gmail.com](mailto:esbensonne+blog@gmail.com
 
 The code I write can often be found at [github.com/cknv](https://github.com/cknv).
 
-I can be found at [plus.google.com/+EsbenSonne](https://plus.google.com/+EsbenSonne/).
+I can be found at [twitter.com/cknvdk](https://twitter.com/cknvdk) and at [plus.google.com/+EsbenSonne](https://plus.google.com/+EsbenSonne/).
 
 And lastly I also have a [linkedin profile](http://dk.linkedin.com/in/esbensonne/).
