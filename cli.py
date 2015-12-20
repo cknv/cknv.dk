@@ -298,8 +298,8 @@ def preview():
 
 
 @cli.command()
-@click.option('--test', default=True, help='upload to test bucket')
-def upload(test):
+@click.option('--live', is_flag=True, help='upload to live')
+def upload(live):
     functions = (
         set_mimetype,
         set_cache_control,
@@ -311,10 +311,11 @@ def upload(test):
     ]
 
     s3 = boto3.resource('s3')
-    if test:
-        bucket_name = 'testcknvdk'
-    else:
+
+    if live:
         bucket_name = 'cknvdk'
+    else:
+        bucket_name = 'testcknvdk'
 
     print('uploading to: {}'.format(bucket_name))
     bucket = s3.Bucket(bucket_name)
