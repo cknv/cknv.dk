@@ -1,15 +1,17 @@
-from scarab import plaintext_loader, image_loader, Renderer, writers, helpers
-import markdown
-import yaml
+import mimetypes
 import os
-from slugify import slugify
+from collections import defaultdict
 from datetime import datetime
-
+from datetime import timedelta
 from itertools import chain
 
-from collections import defaultdict
-
+import boto3
 import click
+import markdown
+import scarab
+import yaml
+from slugify import slugify
+
 
 def slice_raw(page):
     metadata, content = page['raw'].split('---\n')
@@ -56,7 +58,7 @@ def resize_images(image):
 
 
 def make_images():
-    images = image_loader('images')
+    images = scarab.loaders.image_loader('images')
 
     functions = (
         resize_images,
@@ -69,10 +71,13 @@ def make_images():
 
     for image in images:
         extension = os.path.splitext(image['path'])[1].lstrip('.')
-        encoder = helpers.determine_encoder(extension)
+        encoder = scarab.helpers.determine_encoder(extension)
         yield {
             'destination': image['path'],
-            'bytes': helpers.image_to_bytes(image['image'], encoder).getvalue(),
+            'bytes': scarab.helpers.image_to_bytes(
+                image['image'],
+                encoder
+            ).getvalue(),
         }
 
 
@@ -88,7 +93,7 @@ def asset_destination(asset):
 
 
 def make_assets():
-    assets = plaintext_loader('assets')
+    assets = scarab.loaders.plaintext_loader('assets')
     functions = (
         asset_destination,
     )
@@ -111,7 +116,6 @@ def fill_projects(pages):
         for each in pages
         if each['meta']['title'] == 'Projects'
     ][0]
-
 
     projects = defaultdict(list)
     for page in pages:
@@ -150,6 +154,7 @@ def fill_index(pages):
         if page['meta']['type'] == 'blog'
     ]
 
+
 def fill_feed(pages):
     feed_page = [
         each
@@ -164,16 +169,8 @@ def fill_feed(pages):
     ]
 
 
-# def subpages(pages):
-#     subpages = defaultdict(list)
-#     for page in pages:
-#         if 'type' not in page['meta']:
-#             continue
-#         print(page['meta']['type'])
-
-
 def make_content():
-    pages = plaintext_loader('content')
+    pages = scarab.loaders.plaintext_loader('content')
 
     functions = (
         slice_raw,
@@ -187,14 +184,12 @@ def make_content():
         for page in pages
     ]
 
-    # subpages(pages)
-
     fill_projects(pages)
     fill_tags(pages)
     fill_index(pages)
     fill_feed(pages)
 
-    renderer = Renderer(
+    renderer = scarab.renderers.Renderer(
         'templates',
         {
             'site': {
@@ -222,22 +217,8 @@ def make_content():
 
 
 def set_mimetype(item):
-    import mimetypes
-
     content_type, __ = mimetypes.guess_type(item['destination'])
     item['mimetype'] = content_type
-    return item
-
-def compress(item):
-    import zlib
-
-    if item['mimetype'].startswith('image'):
-        return item
-
-    compressor = zlib.compressobj(9, zlib.DEFLATED, zlib.MAX_WBITS | 16)
-
-    item['compressed'] = compressor.compress(item['bytes']) + compressor.flush()
-
     return item
 
 
@@ -251,14 +232,12 @@ def set_cache_control(item):
         'application/atom+xml': 1,
     }
 
-    from datetime import timedelta
     cache_time = int(timedelta(minutes=5).total_seconds())
 
     multiplier = cache_times_multipliers[item['mimetype']]
     item['cache_control'] = 'max-age={}'.format(cache_time * multiplier)
 
     return item
-
 
 
 def all_things():
@@ -268,14 +247,15 @@ def all_things():
         make_images(),
     )
 
+
 @click.group()
 def cli():
-    ...
+    pass
 
 
 @cli.command()
 def render():
-    writers.bytes_writer(all_things(), 'output')
+    scarab.writers.bytes_writer(all_things(), 'output')
 
 
 @cli.command()
@@ -288,7 +268,7 @@ def preview():
 
     class Updater(FileSystemEventHandler):
         def on_any_event(self, event):
-            writers.bytes_writer(cache.filter(all_things()), 'output')
+            scarab.writers.bytes_writer(cache.filter(all_things()), 'output')
 
     updater = Updater()
 
@@ -329,7 +309,7 @@ def upload(test):
         run_functions(item, functions)
         for item in all_things()
     ]
-    import boto3
+
     s3 = boto3.resource('s3')
     if test:
         bucket_name = 'testcknvdk'
@@ -340,7 +320,7 @@ def upload(test):
     bucket = s3.Bucket(bucket_name)
 
     for item in items:
-        s3_object = bucket.put_object(
+        bucket.put_object(
             Key=item['destination'],
             Body=item['bytes'],
             ContentType=item['mimetype'],

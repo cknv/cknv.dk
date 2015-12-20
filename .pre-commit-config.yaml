@@ -1,0 +1,32 @@
+- repo: git://github.com/pre-commit/pre-commit-hooks
+  sha: 29bf11d13689a0a9a895c41eb3591c7e942d377d
+  hooks:
+  - id: flake8
+    language_version: python3.5
+    args:
+      - --ignore=E501,F401,E712
+  - id: check-yaml
+    language_version: python3.5
+  - id: end-of-file-fixer
+    language_version: python3.5
+  - id: trailing-whitespace
+    language_version: python3.5
+# - repo: git://github.com/pre-commit/mirrors-pylint
+#   sha: 4972270a188e28f100cd0db472e05f59d9621e54
+#   hooks:
+#   - id: pylint
+#     language_version: python3.5
+#     args:
+#       - --rcfile=.pylintrc
+- repo: git://github.com/asottile/reorder_python_imports
+  sha: f3dfe379d2ea341c6cf54d926d4585b35dea9251
+  hooks:
+  - id: reorder-python-imports
+    language_version: python3.5
+- repo: git://github.com/FalconSocial/pre-commit-mirrors-pep257
+  sha: 67c970e89857fdcebcd59ace94950a3331985a3b
+  hooks:
+  - id: pep257
+    language_version: python3.5
+    args:
+      - --ignore=D301
