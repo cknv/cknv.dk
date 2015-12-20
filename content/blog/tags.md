@@ -1,5 +1,5 @@
 title: Tags
-url: /blog/tags/index.html
+url: /blog/tags
 subpages: tags.*
 type: groups
 ---

@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
-{% for subpage in page.subpages %}
+{% for subpage in page.subpages|sort(attribute='meta.date', reverse=True)|batch(5)|first %}
 <div>
-    <h3><a href="{{ subpage.url }}">{{ subpage.title }}</a></h3>
-    <p>{{ subpage.summary }}</p>
-    <a href="{{ subpage.url }}">read on >></a>
+    <h3><a href="{{ subpage.meta.url }}">{{ subpage.meta.title }}</a></h3>
+    <p>{{ subpage.meta.summary }}</p>
+    <a href="{{ subpage.meta.url }}">read on >></a>
     <hr />
 </div>
 {% endfor %}

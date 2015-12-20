@@ -1,5 +1,5 @@
 title: Projects
-url: /blog/projects/index.html
+url: /blog/projects
 subpages: project.*
 type: groups
 ---

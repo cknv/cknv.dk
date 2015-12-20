@@ -1,0 +1,7 @@
+title: ~
+url: /feed.atom
+destination: feed.atom
+template: feed.atom
+type: feed
+subpages: category.blog
+---

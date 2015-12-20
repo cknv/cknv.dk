@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>{{ site.domain }}/</id>
+  <id>{{ site.domain }}</id>
   <title>{{ site.title }}</title>
-  <link href="http://{{ site.domain }}{{ page.url }}" rel="self" />
+  <link href="http://{{ site.domain }}{{ page.meta.url }}" rel="self" />
   <link href="http://{{ site.domain }}/" />
-  <updated>{{ beetle.now.strftime('%Y-%m-%dT%H:%M:%S') }}Z</updated>
-  {%- for subpage in page.subpages %}
+  <updated>{{ now|isoformat }}</updated>
+  {%- for subpage in page.subpages|sort(attribute='meta.date', reverse=True)|batch(50)|first %}
   <entry>
-    <id>{{ site.domain + subpage.url }}</id>
+    <id>{{ site.domain + subpage.meta.url }}</id>
     <title>{{ subpage.title }}</title>
-    <link href="http://{{ site.domain + subpage.url }}" />
-    <updated>{{ subpage.date.strftime('%Y-%m-%dT%H:%M:%S') }}Z</updated>
+    <link href="http://{{ site.domain + subpage.meta.url }}" />
+    <updated>{{ subpage.meta.date|isoformat }}</updated>
     <author>
-      <name>{{ subpage.author.name }}</name>
-      <email>{{ subpage.author.email }}</email>
+      <name>{{ author.name }}</name>
+      <email>{{ author.email }}</email>
    </author>
    <summary>{{ subpage.summary }}</summary>
   </entry>

@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
-{{ page.content }}
-{% for group, pages in page.subpages.items() %}
-    <div id='{{ group.slug }}'>
-        <h3>{{ group.name }}</h2>
+{{ page.html }}
+{% for group, pages in page.subpages|dictsort %}
+    <div id='{{ group|slug }}'>
+        <h3>{{ group }}</h2>
         <ul>
-    {% for subpage in pages %}
-        <li>{{ subpage.date }} <a href='{{ subpage.url }}'>{{ subpage.title }}</a></li>
+    {% for subpage in pages|sort(attribute='meta.date', reverse=True) %}
+        <li>{{ subpage.meta.date }} <a href='{{ subpage.meta.url }}'>{{ subpage.meta.title }}</a></li>
     {% endfor %}
         </ul>
     </div>

@@ -1,5 +1,5 @@
 title: Oops
 type: page
-url_pattern: "/error.html"
+url: /error
 ---
 The page cannot be found, are you sure the address is correct?

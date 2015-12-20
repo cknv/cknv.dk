@@ -1,22 +1,22 @@
 {% extends "layout.html" %}
 {% block content %}
-    {{ page.content }}
+    {{ page.html }}
     <hr />
-    {% if page.project %}
+    {% if page.meta.project %}
     <div id="project">
-        <p>Project: <a href="/blog/projects#{{ page.project.slug }}">{{ page.project.name }}</a></p>        
+        <p>Project: <a href="/blog/projects#{{ page.meta.project|slug }}">{{ page.meta.project }}</a></p>
     </div>
     {% endif %}
-    {% if page.tags %}
+    {% if page.meta.tags %}
     <div id="tags">
         <ul id="tags">
             <li class="tag">Tags:</li>
-    {% for tag in page.tags %}
-            <li class="tag"><a href="/blog/tags/#{{ tag.slug }}">{{ tag.name }}</a></li>
+    {% for tag in page.meta.tags %}
+            <li class="tag"><a href="/blog/tags/#{{ tag|slug }}">{{ tag }}</a></li>
     {% endfor %}
         </ul>
     </div>
     {% endif %}
-    <p>Posted {{ page.date.strftime('%b %d %Y')}} by <a href="mailto:{{ page.author.email }}">{{ page.author.name }}</a></p>
+    <p>Posted {{ page.meta.date|simple_date }} by <a href="mailto:{{ author.email }}">{{ author.name }}</a></p>
     <hr />
 {% endblock %}

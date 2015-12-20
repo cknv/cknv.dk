@@ -1,4 +1,5 @@
 title: Blog
-url: /index.html
+url: /
 type: index
 subpages: category.blog
+---
