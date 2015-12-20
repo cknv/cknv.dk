@@ -3,7 +3,7 @@ date: 2015-12-20
 tags: [beetle, scarab]
 category: blog
 type: blog
-summary: Out with the cli tool in with the library (and a script).
+summary: Out with the cli tool, in with the library (and a script).
 ---
 So it has been a while since I last wrote. I have been lazy.
 
