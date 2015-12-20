@@ -4,7 +4,7 @@
 <div>
     <h3><a href="{{ subpage.meta.url }}">{{ subpage.meta.title }}</a></h3>
     <p>{{ subpage.meta.summary }}</p>
-    <p>Posted: {{ subpage.meta.date|simple_date }}  <a href="{{ subpage.meta.url }}">read on >></a></p>
+    <p>{{ subpage.meta.date|simple_date }}</p>
     <hr />
 </div>
 {% endfor %}
