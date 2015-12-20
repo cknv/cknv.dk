@@ -263,7 +263,7 @@ def render():
 
 @cli.command()
 def preview():
-    cache = scarab.OutputCache('output')
+    cache = scarab.caches.OutputCache('output')
 
     class Updater(FileSystemEventHandler):
         def on_any_event(self, event):
