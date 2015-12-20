@@ -13,7 +13,7 @@ import yaml
 from slugify import slugify
 
 
-def slice_raw(page):
+def parse_raw(page):
     metadata, content = page['raw'].split('---\n')
     page['content'] = content
     page['meta'] = yaml.load(metadata)
@@ -173,7 +173,7 @@ def make_content():
     pages = scarab.loaders.plaintext_loader('content')
 
     functions = (
-        slice_raw,
+        parse_raw,
         add_html,
         build_url,
         add_destination,
