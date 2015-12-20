@@ -11,6 +11,8 @@ import markdown
 import scarab
 import yaml
 from slugify import slugify
+from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
 
 
 def parse_raw(page):
@@ -184,6 +186,7 @@ def make_content():
         for page in pages
     ]
 
+    # wow, I seriously need to find a generic way to make the subpages.
     fill_projects(pages)
     fill_tags(pages)
     fill_index(pages)
@@ -260,11 +263,7 @@ def render():
 
 @cli.command()
 def preview():
-    import scarab
     cache = scarab.OutputCache('output')
-
-    from watchdog.observers import Observer
-    from watchdog.events import FileSystemEventHandler
 
     class Updater(FileSystemEventHandler):
         def on_any_event(self, event):
