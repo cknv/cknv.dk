@@ -11,4 +11,4 @@ Well, more or less. Just being lazy is not entirely true, I have been writing, b
 
 I had originally written a quite/somewhat flexible blog engine, that more or less allowed you to do what you wanted to do, or at least what I wanted to do, but as time went I found out that it was not actually an engine I had wanted to write.
 
-So I have thrown out beetle, and I have instead of it, a script and a small utils library called [scarab](github.com/cknv/scarab). The plan is that scarab will slowly grow whenever whenever there is something that you need to do over and over, or if there is something everyone needs to do.
+So I have thrown out beetle, and I have instead of it, a script and a small utils library called [scarab](http://github.com/cknv/scarab). The plan is that scarab will slowly grow whenever whenever there is something that you need to do over and over, or if there is something everyone needs to do.
