@@ -7,6 +7,8 @@ from itertools import chain
 
 import boto3
 import click
+import csscompressor
+import htmlmin
 import markdown
 import scarab
 import yaml
@@ -94,10 +96,17 @@ def asset_destination(asset):
     return asset
 
 
+def css_compress(asset):
+    if asset['destination'].endswith('.css'):
+        asset['raw'] = csscompressor.compress(asset['raw'])
+    return asset
+
+
 def make_assets():
     assets = scarab.loaders.plaintext_loader('assets')
     functions = (
         asset_destination,
+        css_compress,
     )
 
     assets = [
@@ -215,7 +224,7 @@ def make_content():
     for page in pages:
         yield {
             'destination': page['destination'],
-            'bytes': renderer(page).encode(),
+            'bytes': htmlmin.minify(renderer(page)).encode(),
         }
 
 
