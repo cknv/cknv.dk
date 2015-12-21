@@ -81,7 +81,7 @@ def make_images():
             'bytes': scarab.helpers.image_to_bytes(
                 image['image'],
                 encoder
-            ).getvalue(),
+            ),
         }
 
 
