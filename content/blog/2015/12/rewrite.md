@@ -1,6 +1,7 @@
-title: Rewrite
+title: Blog Rewrite
 date: 2015-12-20
-tags: [beetle, scarab]
+tags: [scarab]
+project: beetle
 category: blog
 type: blog
 summary: Out with the cli tool, in with the library (and a script).
