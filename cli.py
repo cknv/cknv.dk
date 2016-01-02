@@ -12,6 +12,7 @@ import htmlmin
 import markdown
 import scarab
 import yaml
+from lxml import etree
 from slugify import slugify
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
@@ -29,8 +30,11 @@ def parse_raw(page):
 
 
 def add_html(page):
-    page['html'] = markdown.markdown(page['content'])
-    page['extension'] = 'html'
+    if page['template'].endswith('.html'):
+        page['html'] = markdown.markdown(page['content'])
+        page['extension'] = 'html'
+    elif page['template'].endswith('.atom'):
+        page['extension'] = 'atom'
     return page
 
 
@@ -221,10 +225,18 @@ def make_content():
     renderer.filters['isoformat'] = lambda x: x.strftime('%Y-%m-%dT%H:%M:%SZ')
     renderer.filters['simple_date'] = lambda x: x.strftime('%b %d %Y')
 
+    parser = etree.XMLParser(remove_blank_text=True)
+
     for page in pages:
+        if page['extension'] == 'html':
+            full_content = htmlmin.minify(renderer(page)).encode()
+        elif page['extension'] == 'atom':
+            elem = etree.XML(renderer(page).encode(), parser=parser)
+            full_content = etree.tostring(elem)
+
         yield {
             'destination': page['destination'],
-            'bytes': htmlmin.minify(renderer(page)).encode(),
+            'bytes': full_content,
         }
 
 

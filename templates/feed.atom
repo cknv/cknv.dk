@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>{{ site.domain }}</id>
+  <id>http://{{ site.domain }}/</id>
   <title>{{ site.title }}</title>
   <link href="http://{{ site.domain }}{{ page.meta.url }}" rel="self" />
   <link href="http://{{ site.domain }}/" />
   <updated>{{ now|isoformat }}</updated>
   {%- for subpage in page.subpages|sort(attribute='meta.date', reverse=True)|batch(50)|first %}
   <entry>
-    <id>{{ site.domain + subpage.meta.url }}</id>
-    <title>{{ subpage.title }}</title>
+    <id>http://{{ site.domain + subpage.meta.url }}</id>
+    <title>{{ subpage.meta.title }}</title>
     <link href="http://{{ site.domain + subpage.meta.url }}" />
     <updated>{{ subpage.meta.date|isoformat }}</updated>
     <author>
       <name>{{ author.name }}</name>
       <email>{{ author.email }}</email>
    </author>
-   <summary>{{ subpage.summary }}</summary>
+   <summary>{{ subpage.meta.summary }}</summary>
   </entry>
   {%- endfor %}
 </feed>
