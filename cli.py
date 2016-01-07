@@ -205,21 +205,18 @@ def make_content():
     fill_index(pages)
     fill_feed(pages)
 
-    renderer = scarab.renderers.Renderer(
-        'templates',
-        {
-            'site': {
-                'domain': 'cknv.dk',
-                'title': 'cknv',
-            },
-            'author': {
-                'image': '/images/esben.jpg',
-                'name': 'Esben Sonne',
-                'email': 'esbensonne+blog@gmail.com',
-            },
-            'now': datetime.utcnow(),
-        }
-    )
+    renderer = scarab.renderers.Renderer('templates')
+
+    renderer.globals['site'] = {
+        'domain': 'cknv.dk',
+        'title': 'cknv',
+    }
+    renderer.globals['author'] = {
+        'image': '/images/esben.jpg',
+        'name': 'Esben Sonne',
+        'email': 'esbensonne+blog@gmail.com',
+    }
+    renderer.globals['now'] = datetime.utcnow()
 
     renderer.filters['slug'] = lambda x: slugify(x)
     renderer.filters['isoformat'] = lambda x: x.strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -228,10 +225,11 @@ def make_content():
     parser = etree.XMLParser(remove_blank_text=True)
 
     for page in pages:
+        rendered_page = renderer(page, page['template'])
         if page['extension'] == 'html':
-            full_content = htmlmin.minify(renderer(page)).encode()
+            full_content = htmlmin.minify(rendered_page).encode()
         elif page['extension'] == 'atom':
-            elem = etree.XML(renderer(page).encode(), parser=parser)
+            elem = etree.XML(rendered_page.encode(), parser=parser)
             full_content = etree.tostring(elem)
 
         yield {
