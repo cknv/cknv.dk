@@ -282,11 +282,12 @@ def render():
 
 @cli.command()
 def preview():
-    cache = scarab.caches.OutputCache('output')
+    server = scarab.servers.PreviewServer(8000)
+    server.set_pages(all_things())
 
     class Updater(FileSystemEventHandler):
         def on_any_event(self, event):
-            scarab.writers.bytes_writer(cache.filter(all_things()), 'output')
+            server.set_pages(all_things())
 
     updater = Updater()
 
@@ -296,23 +297,12 @@ def preview():
         observer.schedule(updater, each, recursive=True)
     observer.start()
 
-    # from http import server
-    # from socketserver import TCPServer
-
-    # request_handler = server.SimpleHTTPRequestHandler
-
-    # httpd = TCPServer(('', 8080), request_handler)
-    print('started monitoring')
-    import time
     try:
-        # print('Preview available at http://0.0.0.0:{}/'.format(8080))
-        # httpd.serve_forever()
-        while True:
-            time.sleep(1)
+        print('Preview available at http://localhost:{}/'.format(8080))
+        server.serve_forever()
     except KeyboardInterrupt:
-        # ...
-        print('stopping monitoring...')
-        # httpd.shutdown()
+        print('Shutting down...')
+        server.shutdown()
 
 
 @cli.command()
