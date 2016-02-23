@@ -4,6 +4,7 @@ from collections import defaultdict
 from datetime import datetime
 from datetime import timedelta
 from itertools import chain
+from hashlib import md5
 
 import boto3
 import click
@@ -31,7 +32,10 @@ def parse_raw(page):
 
 def add_html(page):
     if page['template'].endswith('.html'):
-        page['html'] = markdown.markdown(page['content'])
+        page['html'] = markdown.markdown(
+            page['content'],
+            extensions=['markdown.extensions.codehilite'],
+        )
         page['extension'] = 'html'
     elif page['template'].endswith('.atom'):
         page['extension'] = 'atom'
@@ -80,13 +84,13 @@ def make_images():
     for image in images:
         extension = os.path.splitext(image['path'])[1].lstrip('.')
         encoder = scarab.helpers.determine_encoder(extension)
-        yield {
-            'destination': image['path'],
-            'bytes': scarab.helpers.image_to_bytes(
+        yield scarab.pages.Page(
+            image['path'],
+            scarab.helpers.image_to_bytes(
                 image['image'],
-                encoder
+                encoder,
             ),
-        }
+        )
 
 
 def run_functions(item, functions):
@@ -119,10 +123,10 @@ def make_assets():
     ]
 
     for asset in assets:
-        yield {
-            'destination': asset['destination'],
-            'bytes': asset['raw'].encode(),
-        }
+        yield scarab.pages.Page(
+            asset['destination'],
+            asset['raw'].encode(),
+        )
 
 
 def fill_projects(pages):
@@ -232,19 +236,16 @@ def make_content():
             elem = etree.XML(rendered_page.encode(), parser=parser)
             full_content = etree.tostring(elem)
 
-        yield {
-            'destination': page['destination'],
-            'bytes': full_content,
-        }
+        yield scarab.pages.Page(page['destination'], full_content)
 
 
-def set_mimetype(item):
-    content_type, __ = mimetypes.guess_type(item['destination'])
-    item['mimetype'] = content_type
-    return item
+def set_mimetype(page):
+    content_type, __ = mimetypes.guess_type(page.path)
+    page['mimetype'] = content_type
+    return page
 
 
-def set_cache_control(item):
+def set_cache_control(page):
     cache_times_multipliers = {
         'image/jpeg': 12,
         'image/png': 12,
@@ -256,10 +257,15 @@ def set_cache_control(item):
 
     cache_time = int(timedelta(minutes=5).total_seconds())
 
-    multiplier = cache_times_multipliers[item['mimetype']]
-    item['cache_control'] = 'max-age={}'.format(cache_time * multiplier)
+    multiplier = cache_times_multipliers[page['mimetype']]
+    page['cache_control'] = 'max-age={}'.format(cache_time * multiplier)
 
-    return item
+    return page
+
+
+def set_content_md5(page):
+    page['content_md5'] = md5(page.bytes).hexdigest()
+    return page
 
 
 def all_things():
@@ -306,11 +312,13 @@ def preview():
 
 
 @cli.command()
-@click.option('--live', is_flag=True, help='upload to live')
-def upload(live):
+@click.option('--live', is_flag=True, help='Upload to live.')
+@click.option('--force', is_flag=True, help='Ignore content checksums.')
+def upload(live, force):
     functions = (
         set_mimetype,
         set_cache_control,
+        set_content_md5,
     )
 
     items = [
@@ -326,16 +334,36 @@ def upload(live):
         bucket_name = 'testcknvdk'
 
     print('uploading to: {}'.format(bucket_name))
-    bucket = s3.Bucket(bucket_name)
 
     for item in items:
-        bucket.put_object(
-            Key=item['destination'],
-            Body=item['bytes'],
-            ContentType=item['mimetype'],
-            CacheControl=item['cache_control']
-        )
-        print(item['destination'])
+        s3_item = s3.Object(bucket_name, item.path)
+        try:
+            s3_item.load()
+        except:
+
+            print('uploading: {}'.format(item.path))
+            s3_item.put(
+                CacheControl=item['cache_control'],
+                ContentType=item['mimetype'],
+                Metadata={
+                    'ContentMD5': item['content_md5'],
+                }
+            )
+        else:
+            existing_md5 = s3_item.metadata['contentmd5']
+            new_md5 = item['content_md5']
+            if not force and existing_md5 == new_md5:
+                print('skipping: {}'.format(item.path))
+                continue
+
+            print('updating: {}'.format(item.path))
+            s3_item.put(
+                CacheControl=item['cache_control'],
+                ContentType=item['mimetype'],
+                Metadata={
+                    'ContentMD5': item['content_md5'],
+                }
+            )
 
 
 if __name__ == '__main__':
