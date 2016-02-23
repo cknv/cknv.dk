@@ -3,8 +3,8 @@ import os
 from collections import defaultdict
 from datetime import datetime
 from datetime import timedelta
-from itertools import chain
 from hashlib import md5
+from itertools import chain
 
 import boto3
 import click
