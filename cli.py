@@ -343,11 +343,12 @@ def upload(live, force):
 
             print('uploading: {}'.format(item.path))
             s3_item.put(
+                Body=item.bytes,
                 CacheControl=item['cache_control'],
                 ContentType=item['mimetype'],
                 Metadata={
                     'ContentMD5': item['content_md5'],
-                }
+                },
             )
         else:
             existing_md5 = s3_item.metadata['contentmd5']
@@ -358,11 +359,12 @@ def upload(live, force):
 
             print('updating: {}'.format(item.path))
             s3_item.put(
+                Body=item.bytes,
                 CacheControl=item['cache_control'],
                 ContentType=item['mimetype'],
                 Metadata={
                     'ContentMD5': item['content_md5'],
-                }
+                },
             )
 
 
