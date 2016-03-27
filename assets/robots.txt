@@ -1,2 +1,6 @@
 User-agent: *
-Disallow: /
+Disallow: /images/
+Disallow: /about/
+Disallow: /blog/tags/
+Disallow: /blog/projects/
+Disallow: /index.html/
