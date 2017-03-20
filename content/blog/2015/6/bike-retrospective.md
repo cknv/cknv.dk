@@ -32,7 +32,7 @@ In the end I scavenged a link (while dreading I had ruined the chain) from the f
 
 The second change was the pedals, the generic city/mountain bike ones I used, had a odd metallic frame with points on it. With one side having an especially long point that was uncomfortable to tread on even with shoes with really thick soles, and since I recently switched to some quite minimal shoes (very thin sole), it became clear I needed to switch, as I became tired of having to flip the pedal all the time. The pedals are Traverse from Xpedo (also from Taiwan, it seems), but a rather ordinary looking pair. Not the circular or the crossbones ones that are also available.
 
-And then I also added reflextors to the wheels, since I would like to being hit by a car in the darkness.
+And then I also added reflextors to the wheels, since I would like to avoid being hit by a car in the darkness.
 
 While I was doing all these changes, I also had to rewrap the bartape, as it had loosened in the rain while parked at work (I really want better parking: V-shaped wheel slots and a roof for the rain).
 
