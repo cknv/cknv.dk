@@ -74,3 +74,8 @@ article img {
     margin: auto;
     max-width: 85%;
 }
+
+div.codehilite > pre {
+    background-color: #EFEFEF;
+    padding: 10px;
+}
