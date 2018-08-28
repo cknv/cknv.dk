@@ -10,7 +10,7 @@ I actually wanted to write this way (way, way) earlier, but I have had a few hec
 
 In any case, a while ago I finished my bike, and here it is:
 
-![the brakes](/images/P5300666.JPG)
+![the brakes](/images/P5300666.jpg)
 
 Now there has been some modifications to the bike since I finished it, but before diving into those, lets address the aesthetics, I was despairing about.
 
