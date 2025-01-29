@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %} :: {{ page.title }}{% endblock title %}
+{% block content %}
+<h2 class="title">
+  {{ page.title }}
+</h2>
+<time datetime="{{ page.date }}">{{ page.date }}</time>
+{{ page.content | safe }}
+{% endblock content %}
+{% block bottom_nav %}
+{% if page.taxonomies is containing ("tags") %}
+<nav>
+  <ul>
+  {% for tag in page.taxonomies["tags"] %}
+    <li><a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{tag}}</a></li>
+  {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+{% endblock bottom_nav %}

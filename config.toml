@@ -1,0 +1,23 @@
+# The URL the site will be built for
+base_url = "https://cknv.dk"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = false
+
+# When set to "true", the generated HTML files are minified.
+minify_html = true
+
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+
+taxonomies = [
+    {name = "tags"},
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+# Put all your custom variables here

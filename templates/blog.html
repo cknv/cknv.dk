@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} :: blog {% endblock title %}
+{% block content %}
+{{ section.content | safe }}
+<h2>
+  {{ section.title }}
+</h2>
+<ul>
+  {% for year, posts in section.pages | group_by(attribute="year") %}
+  <h3>{{ year }}</h3>
+  {% for page in posts %}
+  <li>
+    <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+    {% if page.summary %}
+    {{ page.summary | safe }}
+    <a href="{{ page.permalink | safe }}#continue-reading">continue</a>
+    {% endif %}
+  </li>
+  {% endfor %}
+  {% endfor %}
+</ul>
+{% endblock content %}

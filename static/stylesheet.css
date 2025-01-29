@@ -1,0 +1,62 @@
+:root {
+  --font-family: Consolas, monospace;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #F6F3EF;
+    --foreground-color: #212529;
+    --accent: #E67700;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #120F0A;
+    --foreground-color: #F8F9FA;
+    --accent: #FFD43B;
+  }
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+}
+
+:is(p, a, h1, h2, h3, h4, h5, h6) {
+  color: var(--foreground-color);
+}
+:is(h1, h2, h3, h4, h5, h6)::before {
+  content: "# ";
+  color: var(--accent);
+}
+
+blockquote {
+  margin: 0 0 0 1.25rem;
+  border-left: .25rem solid var(--accent);
+  padding: 0 0 0 0.5rem;
+
+}
+
+:is(header, footer) {
+  text-align:center
+}
+main {
+  margin:auto;
+  max-width:780px;
+}
+nav a {
+  margin:0.5rem;
+}
+hr {
+  width:90%
+}
+main>nav>ul>li {
+  display: inline-block;
+}
+main nav ul li a::before {
+  content: "% ";
+}
+pre {
+  padding: 1rem;
+  border-radius: .25rem;
+}

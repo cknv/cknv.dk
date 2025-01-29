@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width-device-width, initial-scale=1">
+  <title>cknv.dk{% block title %}{% endblock title %}</title>
+  <link rel="stylesheet" type="text/css" href="{{ get_url(path="stylesheet.css") }}" />
+  {% block rss %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+  {% endblock %}
+</head>
+<body>
+  <header>
+    <h1>cknv.dk</h1>
+    <nav>
+      <a href="{{ get_url(path='@/_index.md') }}">index</a>
+      <a href="{{ get_url(path='@/blog/_index.md') }}">blog</a>
+      <a href="{{ get_url(path='@/about.md') }}">about</a>
+      <a href="{{ get_url(path='@/resume.md') }}">resume</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  {% block bottom_nav %}{% endblock %}
+  </main>
+</body>
+<footer>
+  <nav>
+    <a href="{{ get_url(path="atom.xml", trailing_slash=false) }}">feed</a>
+  </nav>
+</footer>
+</html>

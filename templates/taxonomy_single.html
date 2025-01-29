@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ term.name }}</h2>
+{% for page in term.pages %}
+<a href="{{ page.permalink }}">{{ page.title }}</a>
+{% endfor %}
+{% endblock content %}
