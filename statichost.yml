@@ -2,3 +2,6 @@ image: "ghcr.io/getzola/zola:v0.19.2"
 command: build
 public: "public"
 image_entrypoint: true
+domains:
+  - cknv.dk
+  - www.cknv.dk
