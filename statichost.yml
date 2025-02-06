@@ -1,3 +1,4 @@
 image: "ghcr.io/getzola/zola:v0.19.2"
-command: "zola build"
+command: build
 public: "public"
+image_entrypoint: true
