@@ -1,5 +1,5 @@
 +++
-title = "Centurion Fixie"
+title = "Centurion Fixed Gear"
 weight = 1
 +++
 Based on an old Centurion frame I bought already sandblasted, I built my first bike.
