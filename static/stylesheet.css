@@ -1,11 +1,17 @@
+@import "/syntax-theme-light.css" screen and (prefers-color-scheme: light);
+@import "/syntax-theme-dark.css" screen and (prefers-color-scheme: dark);
+
 :root {
   --font-family: Consolas, monospace;
 }
+
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #F6F3EF;
     --foreground-color: #212529;
     --accent: #E67700;
+    --link-unvisited: #1864AB;
+    --link-visited: #862E9C;
   }
 }
 
@@ -14,16 +20,19 @@
     --background-color: #120F0A;
     --foreground-color: #F8F9FA;
     --accent: #FFD43B;
+    --link-unvisited: #74C0FC;
+    --link-visited: #B197FC;
   }
 }
 
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
+  color: var(--foreground-color);
 }
 
 :is(p, a, h1, h2, h3, h4, h5, h6) {
-  color: var(--foreground-color);
+/*  color: var(--foreground-color);*/
 }
 :is(h1, h2, h3, h4, h5, h6)::before {
   content: "# ";
@@ -34,27 +43,27 @@ blockquote {
   margin: 0 0 0 1.25rem;
   border-left: .25rem solid var(--accent);
   padding: 0 0 0 0.5rem;
-
 }
 
 :is(header, footer) {
   text-align:center
 }
-main {
-  margin:auto;
-  max-width:780px;
+:is(header, main, footer) {
+  margin: auto;
+  max-width: 50rem;
 }
-nav a {
-  margin:0.5rem;
+a {
+  color: var(--link-unvisited);
+}
+a:visited {
+  color: var(--link-visited);
 }
 hr {
   width:90%
 }
-main>nav>ul>li {
+nav>ul>li {
+  margin: 0 0.5rem 0 0.5rem;
   display: inline-block;
-}
-main nav ul li a::before {
-  content: "% ";
 }
 pre {
   padding: 1rem;

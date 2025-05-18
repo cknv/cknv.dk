@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+{{ taxonomy }}
+{% for each in terms %}
+<h3><a href="{{ each.permalink }}">{{ each.name }}</a></h3>
+<ul>
+{% for page in each.pages %}
+<li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+{% endfor %}
+</ul>
+{% endfor %}
+{% endblock %}
