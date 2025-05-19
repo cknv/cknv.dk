@@ -31,9 +31,6 @@ body {
   color: var(--foreground-color);
 }
 
-:is(p, a, h1, h2, h3, h4, h5, h6) {
-/*  color: var(--foreground-color);*/
-}
 :is(h1, h2, h3, h4, h5, h6)::before {
   content: "# ";
   color: var(--accent);
