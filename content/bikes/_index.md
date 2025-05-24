@@ -6,4 +6,10 @@ Everyone needs a hobby of sorts, and mine is apparently building bicycles, which
 
 The bikes I build have a tendency to have a design quirk or two, since that is actually a significant part of building a bike I find interesting is solving the "problems" that arise from building a quirky bike.
 
+My ideas about what makes a cool bike is informed by many things, but I can identify some of them myself:
+
+- Northern European utility biking.
+- Old school reliability over modern performance gains.
+- Modern "alt biking" in an English or American context.
+
 My current bikes are:
