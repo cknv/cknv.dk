@@ -2,9 +2,9 @@
 title = "Centurion Fixed Gear"
 weight = 1
 +++
-Based on an old Centurion frame I bought already sandblasted, I built my first bike.
-Since I did not really know anything about building bikes, the goal was to keep it as simple as possible - while still being legal under Danish law.
+Based on an old Centurion frame I bought already sandblasted, I built my first bike, and mind you this is the Danish "Centurion" not the Japanese "Centurion" bicycle manufacturer, which are completely different brands.
 
+Since I did not really know anything about building bikes, the goal was to keep it as simple as possible - while still being legal under Danish law.
 That meant skipping gears, as I did not want to have to learn about derailleurs, and instead could focus my energy on wheels, brakes and brake levers, handlebars, bottom bracket, cranks and all the other basic parts that makes a bike rideable.
 
 In the end ended up as nice workhorse that I rode as my primary bike for 8 years.
